@@ -24,20 +24,19 @@
      {
          $this->electrique = true;
      }
-     public function affichevoiture()
+     public function __toString()
      {
-        return $this->marque . ' ' . $this->modele . ' ' . $this->couleur . ' ' . $this->nbPorte  . '' . $this->prix   ;
-       
+         $txt = '';
+         $txt .= 'Le marque de la voiture est:' . $this->marque . '<br>';
+         $txt .= 'Le model de la voiture est:' . $this->modele . '<br>' ;
+         $txt .= 'Le couleur de la voiture est:' . $this->couleur . '<br>' ;
+         $txt .= 'Le nombre de porte est:' . $this->nbPorte . '<br>' ;
+         $txt .= 'Le prix de la voiture est:' . $this->prix . '<br>' ;
+         $txt .= ($this->electrique) ? 'cette voiture est electrique' : "cette voiture n'est pas electrique";
 
-        if($this->electrique)
-        {
-            return $this->electrique . 'cette voiture est electrique';
-        }else
-        {
-            return $this->electrique . "cette voiture n'est pas electrique";
-        }
+         return $txt;
      }
-
+    
      public function getMarque()
      {
          return $this->marque ;
