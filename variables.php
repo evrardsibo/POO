@@ -75,6 +75,18 @@
             {
                 echo 'Bonjour' . $this->name;
             }
+            public function __toString()
+            {
+                
+                $txt= 'mon nom est:'.$this->name . '<br>';
+                $txt.= 'ma classe est:'.$this->classe . '<br>';
+                $txt.= 'mon attaque est:'.$this->attaque . '<br>';
+                $txt.= 'mon pv est:'.$this->pv ;
+                $txt.= ($this->forceDuBien) ? 'je suis fort' : 'je suis null';
+
+                return $txt;
+
+            }
 
 
     }

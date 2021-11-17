@@ -4,16 +4,21 @@
      private $marque;
      private $modele;
      private $couleur;
-     private $nbPorte;
      private $electrique;
+     public $prix;
+     const MINI = 3;
+     const NORMAL = 5;
+     const TVA = 20;
 
-     public function __construct($marque, $modele, $couleur, $nbPorte, $electrique)
+     public function __construct($marque, $modele, $couleur, $nbPorte, $electrique, $prix)
      {
          $this->marque = $marque;
          $this->modele = $modele;
          $this->couleur = $couleur;
          $this->nbPorte = $nbPorte;
          $this->electrique = $electrique;
+         $this->prix = $prix * self::TVA / 100 ;
+
      }
      private function estelecrtique()
      {
@@ -21,7 +26,7 @@
      }
      public function affichevoiture()
      {
-        return $this->marque . ' ' . $this->modele . ' ' . $this->couleur . ' ' . $this->nbPorte  ;
+        return $this->marque . ' ' . $this->modele . ' ' . $this->couleur . ' ' . $this->nbPorte  . '' . $this->prix   ;
        
 
         if($this->electrique)
