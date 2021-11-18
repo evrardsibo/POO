@@ -4,9 +4,9 @@
     {
             private $name;
             private $classe;
-            private $attaque;
+            protected $attaque;
             private $forceDuBien;
-            private $pv;
+            protected  $pv;
 
             public function __construct($name, $classe, $pv, $forceDuBien,$attaque)
             {
@@ -81,8 +81,8 @@
                 $txt= 'mon nom est:'.$this->name . '<br>';
                 $txt.= 'ma classe est:'.$this->classe . '<br>';
                 $txt.= 'mon attaque est:'.$this->attaque . '<br>';
-                $txt.= 'mon pv est:'.$this->pv ;
-                $txt.= ($this->forceDuBien) ? 'je suis fort' : 'je suis null';
+                $txt.= 'mon pv est:'.$this->pv .'<br>' ;
+                $txt.= ($this->forceDuBien) ? 'je suis fort' : 'je suis null' .'<br>';
 
                 return $txt;
 

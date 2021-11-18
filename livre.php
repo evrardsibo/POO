@@ -5,13 +5,15 @@
         public $nbPages;
         private $couleurCouverture;
         private $traduitAnglais;
+        private $type;
 
-        public function __construct($title, $nbPages, $couleur, $traduit)
+        public function __construct($title, $nbPages, $couleur, $traduit,$type)
         {
             $this->title = $title;
             $this->nbPages = $nbPages;
             $this->couleurCouverture = $couleur;
             $this->traduitAnglais = $traduit;
+            $this->type = $type;
         }
 
         private function traductionAnglais()
@@ -19,20 +21,24 @@
             $this->traduitAnglais = true;
         }
         
-            public function afficheLivres()
-        {
-            echo $this->title .'<br>' ;
-            echo $this->nbPages . '<br>';  
-            echo $this->couleurCouverture . '<br>';
+            public function __toString()
+            {
+                $txt = '';
+                $txt .= $this->title .'<br>' ;
+                $txt .= $this->nbPages . '<br>';  
+                $txt .= $this->couleurCouverture . '<br>';
+    
+                if($this->traduitAnglais)
+                {
+                    $txt .= $this->traduitAnglais . 'le livre est traduit';
+                }else
+                {
+                    $txt .= $this->traduitAnglais . 'non traduit';
+                }
 
-            if($this->traduitAnglais)
-            {
-               echo $this->traduitAnglais . 'le livre est traduit';
-            }else
-            {
-                echo $this->traduitAnglais . 'non traduit';
+                return $txt;
             }
-        }
+        
 
         public function setChangeCouleur($couleur)
         {
@@ -48,6 +54,14 @@
             $this->traductionAnglais();
             $this->ajouterPages(5);
             $this->setChangeCouleur('blue');
+        }
+        public function getType()
+        {
+            return $this->type;
+        }
+        public function setType($type)
+        {
+            return $this->type = $type;
         }
 
 

@@ -1,53 +1,19 @@
-<?php 
-require('variables.php');
-require('cars.php');
-require('livre.php');
-$livres = new Personnag('EvaKen', 'hima', 1000, true, 6);
-$cars = new Livres('POO', 500, 'rouge', false);
-$voiture = new Voitures('mercedes', 'classe c', 'noir', 5, true, 1500,Voitures::NORMAL);
-$voiture->setElectrique(true);
-$voiture1 = new Voitures('bmw', 'classe c', 'blue', 5, true,2000,Voitures::NORMAL);
-$voiture2 = new Voitures('ford', 'classe c', 'jaune', 5, false, 3000,Voitures::MINI);
-$voiture3 = new Voitures('bugatti', 'classe c', 'rouge', 5, true, 5000, Voitures::MINI) . '<br>' ;
-$array = [$voiture, $voiture1, $voiture2, $voiture3];
-echo $cars->afficheLivres() . '<br>';
-echo "*************<br>";
-$cars->nbPages = 505;
-echo $cars->afficheLivres() . '<br>';
-echo "*************<br>";
-$cars->setChangeCouleur('orange');
-$cars->ajouterPages(100);
-echo $cars->afficheLivres() . '<br>';
-echo "*************<br>";
-$cars->basculeranglais();
-echo $cars->afficheLivres() . '<br>';
-echo "*************<br>";
-for($i = 0; $i < count($array); $i++)
-{
-   echo $array[$i]. '<br>';
-   echo "*************<br>";
-}
+<?php
+require("personnage.php");
+require('human.php');
+require('zombi.php');
+$human = new Human('Evan','hima',5,true,200,1);
+$human1 = new Human('Kendji','hima',1,true,200,2);
 
-echo "*************<br>";
+$zombi = new Zombi('dd','fdd',10, false,50);
+echo '********************' . '<br>';
+echo $zombi;
+echo '********************' . '<br>';
+echo $zombi->afficheDegat();
 
-
-
- echo $livres;
-
-
-// $livres->getName() ;
-// echo $livres->ditBonjour() .'<br>';
-
-// $livres->setName('sibomana');
-// //var_dump($livres->getName());
-// echo $livres->ditBonjour();
-
-
-
-
-
-
-//var_dump( $livres);
-
-
-
+echo '********************' . '<br>';
+echo $human;
+echo '********************' . '<br>';
+echo $human1;
+echo '********************' . '<br>';
+$human->modifatt(100,200);

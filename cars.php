@@ -6,6 +6,7 @@
      private $couleur;
      private $electrique;
      public $prix;
+    // public static $voitur;
      const MINI = 3;
      const NORMAL = 5;
      const TVA = 20;
@@ -18,8 +19,11 @@
          $this->nbPorte = $nbPorte;
          $this->electrique = $electrique;
          $this->prix = $prix * self::TVA / 100 ;
+         //self::$voitur [] = $this;
+
 
      }
+
      private function estelecrtique()
      {
          $this->electrique = true;
@@ -78,3 +82,5 @@
          return $this->electrique = $electrique;
      }
  }
+
+ 
